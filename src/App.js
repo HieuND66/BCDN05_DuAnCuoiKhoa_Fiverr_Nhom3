@@ -1,13 +1,23 @@
 
 import './App.css';
-import Test from './components/test/Test';
+import { createBrowserHistory } from 'history'
+import { Router, Switch } from 'react-router-dom';
+import { HomeTemplate } from './templates/HomeTemplate/HomeTemplate';
+import Home from './pages/Home/Home';
+
+export const history = createBrowserHistory()
+
 
 function App() {
 
   return (
-    <div className="App">
-    <Test/>
-    </div>
+    <Router history={history}>
+    <Switch>
+
+    <HomeTemplate  path="/" exact Component={Home}/>
+    </Switch>
+
+  </Router>
   );
 }
 
