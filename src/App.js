@@ -3,9 +3,13 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      Content
-    </div>
+    <Router history={history}>
+    <Switch>
+    <HomeTemplate  path="/" exact Component={Home}/>
+    <HomeTemplate  path="/" exact Component={Home}/>
+    </Switch>
+
+  </Router>
   );
 }
 
