@@ -1,0 +1,7 @@
+@use "../../scss/" as *;
+
+.test{
+  text-align: center;
+  width: 100%;
+  background-color: $body-bg;
+}

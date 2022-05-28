@@ -1,0 +1,39 @@
+@use './variables' as *;
+.btn {
+  cursor: pointer;
+  font-family: $font-family;
+  color: $white;
+}
+
+.btn-green, .btn-green-input{
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 12px 24px;
+  height: 48px;
+  border-radius: 0 4px 4px 0;
+  background-color: $green-color;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+}
+.btn-green{
+  border-radius: 4px;
+}
+.btn-green:hover, .btn-green-input:hover{
+  background: #19a463
+}
+.btn-white{
+  border: 1px solid transparent;
+  border-radius: $border-radius;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 100%;
+  padding: 12px 24px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  color: #2e25ad;
+  background-color: #fff
+}
