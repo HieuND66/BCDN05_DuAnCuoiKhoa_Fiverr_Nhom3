@@ -13,7 +13,6 @@ import { Redirect } from 'react-router-dom';
 
 
 export default function UserInfo() {
-
   let { userInfo } = useSelector(state => state.QuanLyUserReducer)
   // useEffect(() => {
   //   dispatch(layThongTinChiTietCongViecAction(id))
