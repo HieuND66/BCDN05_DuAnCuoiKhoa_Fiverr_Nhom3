@@ -1,0 +1,79 @@
+
+.user{
+  font-family: sans-serif;
+  p{
+    margin: 0;
+  }
+  .ant-avatar{
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+    background: #ccc;
+    padding: 22px;
+    border-radius: 50%;
+  }
+  .user__left{
+    .user__left-info{
+      width: 260px;
+      height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      border: 1px solid #dadbdd;
+      border-radius: 4px;
+      padding: 40px 16px 42px;
+    
+      .anticon{
+        vertical-align: 0.2em;
+      }
+      .user__left-info-top{
+        width: 100%;
+        border-bottom: 1px solid #e5e7eb;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+      }
+    }
+    .user__left-contact{
+      width: 260px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      border: 1px solid #dadbdd;
+      border-radius: 4px;
+      padding: 40px 16px 42px;
+      button{
+        color: rgb(83 135 238);
+      }
+    }
+    .user__left-contact-des{
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .user__left-contact-des, .user__left-contact-languges-header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .user__left-contact-languges{
+      border-bottom: 1px solid #e5e7eb;
+      ul{
+        margin-bottom: 0;
+      }
+      li{
+        font-size: 14px;
+        color: #74767e;
+      }
+    }
+  }
+  .user__left-contact-skill{
+    border-bottom: 1px solid #e5e7eb;
+    .add-skill{
+      font-size: 14px;
+      color: #74767e;
+    }
+  }
+}

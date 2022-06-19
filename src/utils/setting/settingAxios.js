@@ -1,5 +1,5 @@
 import axios from "axios"
-import { DOMAIN, TOKEN, TOKEN_FIVERR } from "./setting"
+import { DOMAIN, TOKEN_FIVERR } from "./setting"
 
 
 export const http = axios.create({
@@ -9,8 +9,9 @@ export const http = axios.create({
 http.interceptors.request.use((config) => { 
     config.headers = {
         ...config.headers,
-        'TokenCybersoft': TOKEN_FIVERR ,
-        'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem(TOKEN))
+        'token': TOKEN_FIVERR,
+        'tokenByClass': TOKEN_FIVERR ,
+
     }
     return config
  }, (errors)=>{
