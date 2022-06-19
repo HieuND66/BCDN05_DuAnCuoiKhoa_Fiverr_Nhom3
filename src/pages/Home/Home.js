@@ -7,8 +7,8 @@ import './Home.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle,faFaceBook } from '@fortawesome/free-solid-svg-icons'
 import { layThongTinChiTietCongViecAction } from '../../redux/action/QuanLyJobAction';
-export default function Home(props) {
 
+export default function Home(props) {
      const dispatch = useDispatch();
      useEffect(() => {
           let {id} = props.match.params;
