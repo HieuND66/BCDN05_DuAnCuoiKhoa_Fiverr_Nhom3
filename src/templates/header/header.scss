@@ -1,3 +1,4 @@
+@import '../../scss/variables';
 body {
   background-color: #fff;
   color: #62646a;
@@ -205,7 +206,7 @@ body {
   padding: 0;
 }
 
-.fiverr-nav > ul > li {
+.fiverr-nav > ul > li:not(:last-child) {
   padding: 0 24px 0 0;
 }
 .fiverr-nav > ul > li.display-from-md {
@@ -246,5 +247,23 @@ body {
 
 .nav-link:hover {
   color: #1dbf73;
+}
+.CategoriesMenu{
+  border-bottom: 1px solid #e4e5e7;
+}
+.categories{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.categories .menu-tiem{
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  line-height: 36px;
+  cursor: pointer;
+}
+.categories .menu-tiem:hover{
+  border-bottom: $border-bottom-active;
 }
 

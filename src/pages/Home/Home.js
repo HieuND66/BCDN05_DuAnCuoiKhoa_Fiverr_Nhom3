@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import HomeCarousel from './HomeCarousel/HomeCarousel'
+import { useDispatch } from 'react-redux';
 import { Button } from 'antd';
 import ReactSlick from '../../components/RSlick/ReactSlick';
 import './Home.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle,faFaceBook } from '@fortawesome/free-solid-svg-icons'
+import { layThongTinChiTietCongViecAction } from '../../redux/action/QuanLyJobAction';
+
 export default function Home(props) {
+     const dispatch = useDispatch();
+     useEffect(() => {
+          let {id} = props.match.params;
+          dispatch(layThongTinChiTietCongViecAction(id))
+          //lay thong tin url
+          // let id  = '618d3a5895d99f001c0c0ce8'
+          // dispatch(layThongTinCongViec(id))
+        }, [])
      return (
           <div>
                <HomeCarousel />

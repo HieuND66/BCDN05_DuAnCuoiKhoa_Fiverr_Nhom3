@@ -37,3 +37,18 @@
   color: #2e25ad;
   background-color: #fff
 }
+
+.btn-contact{
+  border: 1px solid #62646a;
+  border-radius: 4px;
+  font-weight: 600;
+  line-height: 100%;
+  padding: 12px 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+  &:hover{
+    background: #74767e;
+    border-color: transparent;
+    color: #fff;
+  }
+}

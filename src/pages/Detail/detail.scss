@@ -1,0 +1,269 @@
+
+.detail-page{
+
+}
+.title-header{
+  padding-bottom: 16px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  font-size: 28px;
+  line-height: 130%;
+  color: #404145;
+  font-weight: 700;
+  
+}
+.stars{
+  display: flex;
+  align-items: center;
+}
+.info-header{
+  display: flex;
+  align-items: center;
+
+  .img-author{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .name-author{
+    font-size: 17px;
+    font-weight: 700;
+    padding-right: 6px;
+  }
+  .text-author{
+    font-size: 15px;
+    padding-right: 6px;
+    &::after{
+      content: "|";
+      color: #c5c6c9;
+      margin-right: 8px;
+      margin-left: 8px;
+    }
+  }
+
+  .point{
+    margin: 0 3px;
+  }
+  .bought{
+    font-size: 15px;
+    margin-right: 5px;
+  }
+  .text-oder{
+    color: #95979d;
+    font-size: 15px;
+  }
+
+}
+
+/// Carousel
+.carousel .thumb{
+  width: 5%;
+  height: 60px;
+}
+.carousel .slide img {
+  height: 439px;
+  width: 650px;
+  object-fit: cover;
+}
+.carousel .control-dots{
+  display: none;
+}
+// about
+.detail-content__about{
+  font-size: 1.1rem;
+  border-bottom: 1px solid #dadbdd;
+  padding-bottom: 8px;
+  .detail-content__about-header{
+    font-size: 1.5rem;
+    color: black;
+  }
+  .detail__about-mess{
+    margin: 12px 0;
+    line-height: 24px;
+  }
+}
+.detail-content__other{
+  display: flex;
+  .language{
+    margin-right: 74px;
+  }
+  h3{
+    font-size: 18px;
+    line-height: 24px;
+    color: #95979d;
+  }
+}
+
+.detail-content__seller{
+
+  h2{
+    font-size: 1.4rem;
+    color: black;
+    font-weight: 600;
+  }
+  .detail-content-seller-info{
+    display: flex;
+    .img-author{
+      margin-right: 24px;
+      width: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    h3{
+      display: block;
+      color: #62646a;
+      font-weight: 700;
+    }
+    p{
+      font-weight: 400;
+      font-stretch: normal;
+      font-size: 17px;
+    }
+   
+  }
+}
+
+// reviews
+.detail-content__reviews{
+  h3{
+    font-size: 17px;
+    font-weight: 400;
+  }
+  .detail-content__reviews-header{
+    display: flex;
+    justify-content: space-between;
+  }
+  .detail-content__reviews-header-left, .detail-content__reviews-header-right{
+    display: flex;
+  }
+  .detail-content__reviews-header-left{
+    h3{ 
+      font-weight: 700;
+      font-size: 20px;
+      color: black;
+      margin-right: 12px;
+    }
+  }
+  .detail-content__reviews-header-right{
+    
+    .detail-sort{
+      font-size: 18px;
+      margin-left: 12px;
+      font-weight: 600;
+      color: #404145;
+    }
+  }
+}
+.detail-content__reviews-table{
+  display: flex;
+  .stars-counters{
+    margin-right: 3.5rem;
+    .progress-bar-container{
+      .progress{
+        position: relative;
+        height: 8px;
+        background: #e4e5e7;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        width: 250px;
+        flex-grow: 1;
+        border-radius: 5px;
+        .star-progress-shape {
+          background-color: #ffb33e;
+          height: 100%;
+          border-radius: 5px;
+        }
+      }
+      }
+  }
+  .detail-rating{
+    width: 100%;
+    .detail-rating-text{
+      font-size: 17px;
+      font-weight: 600;
+    }
+    ul li{
+      display: flex;
+      justify-content: space-between;
+      line-height: 26px;
+      span{
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+}
+
+.detail-content__comment{
+  .commnent-wapper{
+    border-top: 1px solid #dadbdd;
+    .user-info{
+      display: flex;
+    }
+    .img-author{
+      width: 50px;
+      border-radius: 50%;
+      height: 50px;
+      margin-right: 24px;
+    }
+    .user-info-wrap{
+      display: flex;
+      align-items: center;
+    }
+    .commnet-time{
+      font-size: 14px;
+      line-height: 24px;
+      color: #95979d;
+    }
+    .comment-feedback {
+    
+    }
+  }
+}
+
+/// detail-pay
+.detail-pay-wrap{
+  width: 100%;
+}
+.detail-pay{
+  width: 420px;
+  float: right;
+  .detail-pay__header{
+    padding: 38px 28px;
+    border: 1px solid #dadbdd;
+
+    .detail-pay-money{
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 24px;
+      color: #404145;
+    }
+    .detail-pay-des{
+      color: #62646a;
+      font-size: 14px;
+      line-height: 140%;
+      word-break: break-word;
+    }
+  
+    .detail-pay-info__time{
+      display: flex;
+      align-items: center;
+  
+    }
+    .detail-payinfo__check{
+      display: flex;
+      align-items: center;
+    }
+
+  }
+  .detail-pay__footer {
+
+    margin-bottom: 16px;
+    padding: 24px;
+    background-color: #fafafa;
+    .btn-contact{
+    }
+  }
+}

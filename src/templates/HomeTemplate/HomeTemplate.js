@@ -4,7 +4,7 @@ import { Fragment, useEffect } from "react";
 import Header from '../header/Header';
 
 
-export const HomeTemplate = (props) => {
+ const HomeTemplate = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   })
@@ -17,3 +17,5 @@ export const HomeTemplate = (props) => {
     </Fragment>
   }} />
 }
+
+export default HomeTemplate;
