@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
-    "antd": "^4.21.0",
+    "antd": "^4.21.1",
     "axios": "^0.27.2",
+    "font-awesome": "^4.7.0",
     "formik": "^2.2.9",
     "history": "^4.10.0",
     "lodash": "^4.17.21",
@@ -19,12 +23,12 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.1",
-    "react-slideshow-image": "^3.7.5",
+    "react-slick": "^0.29.0",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
     "sass": "^1.51.0",
-    "web-vitals": "^2.1.4",
-    "yup": "^0.32.11"
+    "slick-carousel": "^1.8.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
