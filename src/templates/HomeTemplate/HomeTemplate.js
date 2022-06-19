@@ -10,7 +10,6 @@ export const HomeTemplate = (props) => {
   })
   const { Component, ...resProps } = props
   return <Route {...resProps} render={(propsRoute) => {
-    // Fragment: Gần giống div nhưng sẽ ko hiển thị trên giao diện thẻ
     return <Fragment>
       <Header {...propsRoute} />
       <Component {...propsRoute} />

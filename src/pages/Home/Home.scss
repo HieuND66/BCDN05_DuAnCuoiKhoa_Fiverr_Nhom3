@@ -1,0 +1,184 @@
+h2 {
+    font-size: 32px;
+    line-height: 120%;
+    padding-bottom: 20px;
+}
+
+.selling-proposition-wrapper {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    background-color: #f1fdf7;
+    margin: 64px 0;
+    .selling-text {
+        h2 {
+            color: #404145;
+            font-weight: 700;
+            font-size: 32px;
+            padding-bottom: 24px;
+        }
+        h6 {
+            font-size: 18px;
+            padding-bottom: 8px;
+            color: #404145;
+            font-weight: 700;
+            span {
+                margin-left: 10px;
+            }
+        }
+        p {
+            font-size: 18px;
+            line-height: 26px;
+        }
+    }
+    .picture-wrapper picture {
+        position: relative;
+    }
+    .picture-wrapper picture::after {
+        content: "";
+        display: inline-block;
+        background: url("https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/desktop-play-button.c1196d6.png")
+            no-repeat;
+        background-size: 80px;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        z-index: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.main-categories {
+    .categories-list {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+            display: block;
+            padding-bottom: 55px;
+            padding: 0 10px 32px;
+            text-align: center;
+            width: 20%;
+            a {
+                color: #222325;
+                position: relative;
+                display: block;
+                font-size: 16px;
+                img {
+                    display: block;
+                    width: 48px;
+                    height: 48px;
+                    margin: 0 auto 15px;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 45px;
+                    right: 50%;
+                    transform: translateX(50%);
+                    padding: 0 0 8px;
+                    width: 48px;
+                    border-bottom: 2px solid #c5c6c9;
+                    transition: all 0.3s;
+                }
+            }
+        }
+        li:hover {
+            a:after {
+                width: 100px;
+                border-bottom: 2px solid #1dbf73;
+            }
+        }
+    }
+}
+.testimonial-wrapper {
+    .testimonial {
+        display: flex;
+        .testimonial-modal {
+            width: 50%;
+            position: relative;
+            cursor: pointer;
+            picture::after {
+                content: "";
+                display: inline-block;
+                background: url("https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/desktop-play-button.c1196d6.png")
+                    no-repeat;
+                background-size: 80px;
+                width: 80px;
+                height: 80px;
+                position: absolute;
+                z-index: 0;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 4px;
+            }
+        }
+        .testimonial-content {
+            width: 50%;
+            padding: 0 36px 0 16px;
+            h5 {
+                font-weight: 400;
+                color: #74767e;
+                padding-bottom: 16px;
+                font-size: 20px;
+                img {
+                    display: block;
+                    height: 36px;
+                    margin-left: -6px;
+                }
+            }
+            blockquote {
+                font-size: 24px;
+                line-height: 36px;
+                color: #003912;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+footer {
+    .footer-top {
+        display: flex;
+        padding: 64px 0;
+        .footer-item {
+            width: 20%;
+            h6 {
+                color: #404145;
+                font-size: 16px;
+                font-weight: 700;
+            }
+            li {
+                padding-bottom: 16px;
+                a {
+                    color: #74767e;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .footer-right {
+            display: flex;
+            ul {
+                display: flex;
+                padding-right: 32px;
+                li {
+                    margin-right: 26px;
+                    .social-icon {
+                        fill: #74767e;
+                        padding: 2px;
+                    }
+                }
+            }
+        }
+    }
+}
