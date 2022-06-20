@@ -1,15 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './header.scss'
 import '../../scss/_button.scss'
 import { NavLink } from 'react-router-dom'
 import { history } from '../../App'
-
+import { useDispatch, useSelector } from 'react-redux';
 
 import { TOKEN, USER_LOGIN } from '../../utils/setting/setting'
+import { layDanhSachLoaiCongViecAction } from '../../redux/action/QuanLyLoaiJobAction'
 
 export default function Header() {
+  
+  const dispatch = useDispatch();
 
-
+  const { loaiCongViec } = useSelector(state => state.QuanLyLoaiJobReducer)
+  useEffect(() => {
+    dispatch(layDanhSachLoaiCongViecAction())
+  }, [])
+  const rederJobType = () =>{
+    return loaiCongViec.map((loai, index) => {
+      return <li className='menu-tiem  ' key={index}>
+          <NavLink to='/joblist' className='text-gray-500 hover:text-gray-500 font-semibold'>{loai.name}</NavLink>
+      </li>
+    })
+  }
+// console.log(loaiCongViec);
   return (
     <div id="herader">
       <div className="header-package fiverr-header">
@@ -75,15 +89,7 @@ export default function Header() {
       </div>
       <div className="CategoriesMenu">
         <ul className='categories max-width-container container'>
-          <li className='menu-tiem'>Graphics & Design</li>
-          <li className='menu-tiem'>Digital Marketing</li>
-          <li className='menu-tiem'>Writing & Translation </li>
-          <li className='menu-tiem'>Video & Animation</li>
-          <li className='menu-tiem'>Music & Audio</li>
-          <li className='menu-tiem'>Programming & Tech</li>
-          <li className='menu-tiem'>Business</li>
-          <li className='menu-tiem'>Lifestyle</li>
-          <li className='menu-tiem'>Trending</li>
+                  {rederJobType()}
         </ul>
       </div>
     </div>
