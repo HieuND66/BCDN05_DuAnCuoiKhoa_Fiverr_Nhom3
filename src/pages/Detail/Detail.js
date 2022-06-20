@@ -48,8 +48,8 @@ export default function Detail(props) {
               {jobDetail ? <img src={jobDetail.image} alt="" className='img-author mr-4' />: <img src={jobDetail.image} alt="" className='img-author mr-4' />}
                 
                 {/* <img src={jobDetail.image} alt="" className='img-author mr-4' /> */}
-                {/* {jobDetail ? <p className="name-author ">{jobDetail.subType.name}</p> : <p className="name-author ">parthbhuta</p>} */}
-                <p className="name-author ">{jobDetail.subType.name}</p>
+                {jobDetail.subType != null ? <p className="name-author ">{jobDetail.subType.name}</p> : <p className="name-author ">parthbhuta</p>}
+                {/* <p className="name-author ">{jobDetail.subType.name}</p> */}
                 {/* <p className="name-author ">{jobDetail.name}</p> */}
                 {/* <p className="name-author ">parthbhuta</p> */}
                 <p className="text-author">Level 2 Seller</p>

@@ -9,6 +9,7 @@ import {Suspense, lazy} from 'react'
 import UserInfo from './pages/UserInfo/UserInfo';
 import Login from './pages/Login/Login';
 import DeTailCheckOut from './pages/Checkout/DeTailCheckOut';
+import JobList from './pages/JobList/JobList';
 
 const HomeTemplateLazy = lazy(() => import ('./templates/HomeTemplate/HomeTemplate'))
 export const history = createBrowserHistory()
@@ -22,6 +23,7 @@ function App() {
 
     <HomeTemplate  path="/" exact Component={Home}/>
     <Suspense fallback = {<h1>Loading...</h1>}>
+    <HomeTemplateLazy  path="/joblist" exact Component={JobList}/>
     <HomeTemplateLazy  path="/job/:id" exact Component={Detail}/>
     <HomeTemplate path="/user/:id" exact Component={UserInfo} />
     <HomeTemplate path='/login' exact Component={Login} />
