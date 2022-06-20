@@ -11,7 +11,7 @@ export const layDanhSachLoaiCongViecAction = (id) => {
     
     try {
       let result = await quaLyLoaiJobService.layDanhSachLoaiCongViec();
-      console.log('result', result.data);
+      // console.log('result', result.data);
       if (result.status === 200) {
         dispatch({
           type: SET_LOAI_CONG_VIEC,
