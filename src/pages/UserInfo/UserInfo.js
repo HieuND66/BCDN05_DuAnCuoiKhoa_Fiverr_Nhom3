@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import './userInfo.scss'
 import { UserOutlined, } from '@ant-design/icons';
@@ -8,32 +8,76 @@ import { EditOutlined, PlusOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import { USER_LOGIN } from '../../utils/setting/setting';
 import { Redirect } from 'react-router-dom';
-
+import { layThongTinChiTietCongViecAction } from '../../redux/action/QuanLyJobAction';
+import { AiFillStar } from "react-icons/ai";
 
 
 
 export default function UserInfo() {
+  
+  const dispatch = useDispatch();
   let { userInfo } = useSelector(state => state.QuanLyUserReducer)
-  // useEffect(() => {
-  //   dispatch(layThongTinChiTietCongViecAction(id))
-  // }, [])
+  const {jobDetail} = useSelector(state => state.QuanLyJobReducer)
+  const userLocal = JSON.parse(localStorage.getItem(USER_LOGIN)).user
+  
+   console.log(userLocal.bookingJob[0]);
+  useEffect(() => {
+    dispatch(layThongTinChiTietCongViecAction(userLocal.bookingJob[0]))
+  
+  }, []);
+  
+  let sliceImg = ''
+  if (jobDetail.subType) {
+    sliceImg = jobDetail.subType.image
+  } else {
+    sliceImg = jobDetail.image
+  }
+ 
+  const renderJobBooking = () =>{
+    return  <div className="container-checkout ">
+    <img src={sliceImg} alt="Pancake" />
+    <div className="container__text leading-8">
+      <h1>{jobDetail.subType.name}</h1>
+      <div className="stars text-2xl ">
+        <AiFillStar className='text-yellow-400 pr-1' />
+        <AiFillStar className='text-yellow-400 pr-1' />
+        <AiFillStar className='text-yellow-400 pr-1' />
+        <AiFillStar className='text-yellow-400 pr-1' />
+        <AiFillStar className='text-yellow-400 pr-1' />
 
-  console.log(userInfo);
-  console.log(userInfo.bookingJob);
+        <p className="point text-yellow-500 px-1 mb-0">{jobDetail.rating}</p>
+        <p className="bought mb-0 pl-1">(150)</p>
+      </div>
+  
+      <p className="py-2 text-xl uppercase">
+      {jobDetail.name}
+      </p>
+
+    </div>
+  </div>
+   }
   if (!localStorage.getItem(USER_LOGIN)) {
     return <Redirect to='/login' />
   }
+  const rednerSkill = () =>{
+   return userLocal.skill.map((skil, indx) =>{
+    return <p className='add-skill py-1' key={indx}>{skil}</p>
+    })
+  }
+ 
   return (
-    <div className='user container pt-8'>
+    <div className='user container pt-8 flex justify-between'>
       <div className="user__left">
         <div className="user__left-info">
           <div className="user__left-info-top">
 
             <div className="user__left-avatar">
-              <Avatar size={64} icon={<UserOutlined />} />
+             
+                <img src={userLocal.avatar} alt="" />
+              
             </div>
             <div className="user__left-name pt-2">
-              <h3 className='user-name'>Hieund</h3>
+              <h3 className='user-name'>{userLocal.name}</h3>
             </div>
             <div className="user__left-edit text-xl">
               <EditOutlined />
@@ -76,7 +120,9 @@ export default function UserInfo() {
               <p>Skill</p>
               <button className='user-edit'>Add New</button>
             </div>
-            <p className='add-skill py-1'>Add your skill</p>
+            
+            {rednerSkill()}
+            <p className='add-skill py-1'>Add your skill...</p>
           </div>
           <div className="user__left-contact-skill pb-4 ">
             <div className="skill-wrap flex justify-between">
@@ -96,7 +142,8 @@ export default function UserInfo() {
         </div>
       </div>
       <div className="user__right">
-
+        <h1 className='text-gray-500 py-6 text-xl'>List of purchased products</h1>
+      {renderJobBooking()}
       </div>
     </div>
   )

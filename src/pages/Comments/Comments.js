@@ -11,7 +11,7 @@ export default function Comments(props) {
   }, [])
   // console.log(comments.comments[0].content);
   let userCommnet = comments.comments
-  console.log(userCommnet);
+  console.log(comments);
 
 
   const renderCommnets = () => {
@@ -23,7 +23,7 @@ export default function Comments(props) {
               <img src="https://i.pravatar.cc/300" alt="" className='img-author' />
               <div className="user-info-name">
                 <div className="user-info-wrap">
-                  <h3>{comment ? comment.user.name : 'Mack zuck'}</h3>
+                  <h3>{comment ? comment.user ? comment.user.name : 'Mack zuck' : 'Mack zuck'}</h3>
                   <div className="stars pl-2">
                     <AiFillStar className='text-yellow-400' />
                     <AiFillStar className='text-yellow-400' />

@@ -33,6 +33,21 @@ export default function Detail(props) {
     dispatch(layThongTinChiTietCongViecAction(id))
   }, [])
 
+  let imgBackUp = 'https://fiverr.cybersoft.edu.vn/public/images/job/1636645826542_design-professional-wix-website-b6ab.jpg'
+  const imageCard = (job) =>{
+    if(job.subType){
+      if(job.image && job.subType.image){
+        return <img src={job.subType.image} alt="" />
+      }else{
+        return <img src={imgBackUp} alt="" />
+      }
+    } else if(job.image){
+      return <img src={job.image} alt="" />
+    } else{
+      return <img src={imgBackUp} alt="" />
+    }
+    
+  }
 
 
   return (
@@ -68,7 +83,7 @@ export default function Detail(props) {
             <div className="slide-container">
               <Carousel>
                 <div>
-                  <img src={fadeImages[0].url} />
+                {imageCard(jobDetail)}
                 </div>
               </Carousel>
             </div>

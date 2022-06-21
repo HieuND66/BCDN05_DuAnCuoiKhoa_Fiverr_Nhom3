@@ -9,6 +9,17 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   margin: auto;
+  .user  {
+    display: flex;
+    align-items: center;
+    img{
+
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+  }
 }
 .card {
   // margin: 10px;
@@ -42,11 +53,7 @@
   margin-top: 0;
   font-weight: 500;
 }
-.user {
-  display: flex;
-  align-items: center;
 
-}
 .card-body{
   
   p{
@@ -57,15 +64,37 @@
   padding-left: 2px;
   padding-right: 2px;
 }
-.user img {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-}
+
 .user-info h5 {
   margin: 0;
 }
 .card-footer{
   padding: 10px 20px 10px 20px;
+}
+
+.paginationBttns{
+  width: 80%;
+  height: 50px;
+  list-style: none;
+  display: flex;
+  float: right;
+  a {
+    padding: 8px;
+    margin: 6px;
+    border-radius: 5px;
+    border: 1px solid #1dbf73;
+    color: #1dbf73;
+    cursor: pointer;
+    &:hover{
+      color: white;
+      background-color: #1dbf73;
+    }
+  }
+}
+
+.paginationActive{
+  a {
+    color: white;
+      background-color: #1dbf73;
+  }
 }
