@@ -13,7 +13,9 @@ import Header from '../header/Header';
     return <Fragment>
       <Header {...propsRoute} />
       <Component {...propsRoute} />
+      <div className="footer">
       footer
+      </div>
     </Fragment>
   }} />
 }

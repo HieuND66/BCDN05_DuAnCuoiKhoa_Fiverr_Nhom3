@@ -57,6 +57,9 @@
 }
 
 /// Carousel
+.slide-container{
+  width: 85%;
+}
 .carousel .thumb{
   width: 5%;
   height: 60px;
@@ -107,6 +110,7 @@
     .img-author{
       margin-right: 24px;
       width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
     }
@@ -267,3 +271,4 @@
     }
   }
 }
+
