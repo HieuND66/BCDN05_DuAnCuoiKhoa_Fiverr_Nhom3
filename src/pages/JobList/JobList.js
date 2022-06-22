@@ -7,7 +7,7 @@ import { layDanhSachCongViecAction } from '../../redux/action/QuanLyJobAction';
 import { layDanhSachLoaiCongViecAction } from '../../redux/action/QuanLyLoaiJobAction';
 import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
-
+import { Pagination } from 'antd';
 
 export default function JobList() {
 
@@ -78,7 +78,6 @@ export default function JobList() {
   const jobPerPage = 12
   const pageVisited = pageNumber * jobPerPage
   const displayJob = () => {
-
     return jobs.slice(pageVisited, pageVisited + jobPerPage).map((job, index) =>{
      return <NavLink to={`/job/${job._id}`}  key={index} className='card'>
          <div className="card-header">
@@ -122,12 +121,12 @@ export default function JobList() {
     <div className="container">
       <div className='grid grid-cols-4 gap-12 pt-8'>
         
-        {/* {displayJob()} */}
-        {renderListJob()}
+        {displayJob()}
+        {/* {renderListJob()} */}
       </div>
-      {/* <div className="pagination w-3/4 float-right my-12">
+      <div className="pagination w-3/4 float-right my-12">
 
-        <ReactPaginate
+        {/* <ReactPaginate
           previousLabel={"Previous"}
           nextLabel={'Next'}
           pageCount= {pageCount}
@@ -137,8 +136,9 @@ export default function JobList() {
           nextClassName={"nextBttn"}
           disabledClassName={"paginationDisabled"}
           activeClassName={"paginationActive"}
-        />
-      </div> */}
+        /> */}
+      </div>
+      
     </div>
 
   )

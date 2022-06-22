@@ -11,7 +11,7 @@ export default function Comments(props) {
   }, [])
   // console.log(comments.comments[0].content);
   let userCommnet = comments.comments
-  console.log(comments);
+  // console.log(userCommnet);
 
 
   const renderCommnets = () => {

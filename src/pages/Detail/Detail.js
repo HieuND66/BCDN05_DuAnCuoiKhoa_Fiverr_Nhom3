@@ -290,7 +290,7 @@ export default function Detail(props) {
           </div>
           <Comments id = {id}/>
         </div>
-        {console.log(id)} 
+    
         <Checkout id = {id} jobDetail = {jobDetail}/>
       </div>
     </div>
