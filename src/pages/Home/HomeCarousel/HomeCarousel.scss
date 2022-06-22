@@ -56,20 +56,19 @@
             ul {
                 display: flex;
                 li {
-                    width: 25%;
                     padding: 0 10px;
                     a {
                         background-color: transparent;
                         line-height: 24px;
                         font-weight: 600;
                         color: #fff;
-                        padding: 1px 12px 0;
                         border: 1px solid #fff;
                         border-radius: 40px;
                         width: 100%;
                         display: block;
                         font-size: 14px;
-                        transition: all .3s;
+                        transition: all 0.3s;
+                        padding: 0 5px;
 
                     }
                 }
@@ -81,5 +80,28 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width:991px) {
+    .carousel .carousel-content{
+        width: 100%;
+    }
+}
+@media screen and (max-width:849px) {
+    .carousel .carousel-content form input{
+        width: 100%;
+        border-radius: 4px;
+    }
+    .carousel .carousel-content form button{
+        width: 100%;
+        border-radius: 4px;
+margin-top: 20px;
+    }
+    .carousel .carousel-content .carousel-popular{
+        display: none;
+    }
+    .carousel .carousel-content form svg{
+        display: none;
     }
 }

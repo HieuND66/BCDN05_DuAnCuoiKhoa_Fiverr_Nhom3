@@ -5,7 +5,7 @@ import { quanLyDanhSachJobService } from '../../services/QuanLyDanhSachJobServic
 
 import { quanLyJobService } from "../../services/QuanLyJobService";
 import { SET_DANH_SACH_CONG_VIEC } from '../types/QuanLyDanhSachJob';
-import { SET_CHI_TIET_CONG_VIEC } from '../types/QuanLyJobType';
+import { DSCV_THEO_TEN, SET_CHI_TIET_CONG_VIEC } from '../types/QuanLyJobType';
 
 // export const layThongTinChiTietCongViecAction = (id) => {
 
@@ -65,4 +65,22 @@ export const layDanhSachCongViecAction = (id) => {
   }
 }
 
+export const layDSCVtheoTenAction = (name) => {
+  return async (dispatch) => {
+    try {
+      console.log(name);
+      let result = await quanLyJobService.layDSCVtheoTen(name);
+      // console.log('result', result.data);
+      if (result.status === 200) {
+        dispatch({
+          type: DSCV_THEO_TEN,
+          DSCV: result.data
+        })
+        console.log(result);
+      }
 
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}

@@ -1,1 +1,2 @@
 export const SET_CHI_TIET_CONG_VIEC = 'SET_CHI_TIET_CONG_VIEC'
+export const DSCV_THEO_TEN = 'DSCV_THEO_TEN'

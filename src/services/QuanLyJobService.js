@@ -21,6 +21,9 @@ export class QuanLyJobService {
   layThongTinCongViec = (id) =>{
     return http.get(`/api/jobs/${id}`)
   }
+  layDSCVtheoTen = (name) => {
+    return http.get(`/api/jobs/by-name?name=${name}`)
+}
 }
 
 export const quanLyJobService = new QuanLyJobService()
