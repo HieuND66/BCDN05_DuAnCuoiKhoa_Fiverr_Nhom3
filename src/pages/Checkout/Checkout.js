@@ -17,7 +17,9 @@ export default function Checkout(props) {
   //   dispatch(action)
   // }, [])
 //  console.log(jobDetail);
-
+// if (!localStorage.getItem(USER_LOGIN)) {
+//   return <Redirect to='/login' />
+// }
   return (
     <div className="detail-pay-wrap">
       <div className="detail-pay mt-5">
@@ -37,7 +39,7 @@ export default function Checkout(props) {
               className="btn btn-green text-white flex items-center justify-center w-11/12 m-auto"
               onClick={() =>{
                 if(localStorage.getItem(TOKEN)){
-                  console.log(`/detaicheckout/${id}`)
+                  // console.log(`/detaicheckout/${id}`)
                   history.push(`/detaicheckout/${id}`)
                 } else{
                   history.push('/login')

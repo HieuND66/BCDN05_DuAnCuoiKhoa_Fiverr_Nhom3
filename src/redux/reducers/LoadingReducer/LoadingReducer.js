@@ -1,0 +1,20 @@
+import { HIDE_LOADING, PLAY_LOADING } from "../../types/LoadingType"
+
+const stateDefault = {
+    isLoading: false
+}
+
+export const LoadingReducer = (state = stateDefault, action) => {
+    switch (action.type) {
+
+        case PLAY_LOADING:
+            state.isLoading = true
+            return { ...state }
+        case HIDE_LOADING:
+            state.isLoading = false
+            return { ...state }
+
+        default:
+            return state
+    }
+}

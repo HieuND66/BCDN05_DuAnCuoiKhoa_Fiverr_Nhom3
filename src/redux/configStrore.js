@@ -6,6 +6,7 @@ import {QuanLyCommentsReducer} from "./reducers/QuanLyCommentsReducer"
 import {QuanLyUserReducer} from "./reducers/QuanLyUserReducer"
 import { QuanLyDanhSachCongViecReducer } from "./reducers/QuanLyDanhSachJobReducer";
 import { QuanLyLoaiJobReducer } from "./reducers/QuanLyLoaiJobReducer";
+import { LoadingReducer } from "./reducers/LoadingReducer/LoadingReducer";
 
 const rootReducer = combineReducers({
 
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   QuanLyCommentsReducer,
   QuanLyUserReducer,
   QuanLyDanhSachCongViecReducer,
-  QuanLyLoaiJobReducer
+  QuanLyLoaiJobReducer,
+  LoadingReducer
 })
 export const store = createStore(rootReducer, applyMiddleware(thunk))

@@ -11,6 +11,7 @@ http.interceptors.request.use((config) => {
         ...config.headers,
         'token': TOKEN_FIVERR,
         'tokenByClass': TOKEN_FIVERR ,
+        'Content-Type': 'application/json'
 
     }
     return config

@@ -10,13 +10,13 @@ import { layThongTinChiTietCongViecAction } from '../../redux/action/QuanLyJobAc
 
 export default function Home(props) {
      const dispatch = useDispatch();
-     useEffect(() => {
-          let {id} = props.match.params;
-          dispatch(layThongTinChiTietCongViecAction(id))
-          //lay thong tin url
-          // let id  = '618d3a5895d99f001c0c0ce8'
-          // dispatch(layThongTinCongViec(id))
-        }, [])
+     // useEffect(() => {
+     //      let {id} = props.match.params;
+     //      dispatch(layThongTinChiTietCongViecAction(id))
+     //      //lay thong tin url
+     //      // let id  = '618d3a5895d99f001c0c0ce8'
+     //      // dispatch(layThongTinCongViec(id))
+     //    }, [])
      return (
           <div>
                <HomeCarousel />
