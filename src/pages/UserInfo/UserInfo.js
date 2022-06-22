@@ -19,7 +19,7 @@ export default function UserInfo() {
   let { userInfo } = useSelector(state => state.QuanLyUserReducer)
   const {jobDetail} = useSelector(state => state.QuanLyJobReducer)
   const userLocal = JSON.parse(localStorage.getItem(USER_LOGIN)).user
-  
+
    console.log(userLocal.bookingJob[0]);
   useEffect(() => {
     dispatch(layThongTinChiTietCongViecAction(userLocal.bookingJob[0]))
@@ -37,7 +37,7 @@ export default function UserInfo() {
     return  <div className="container-checkout ">
     <img src={sliceImg} alt="Pancake" />
     <div className="container__text leading-8">
-      <h1>{jobDetail.subType.name}</h1>
+      <h1>{jobDetail.subType ? jobDetail.subType.name : jobDetail.name}</h1>
       <div className="stars text-2xl ">
         <AiFillStar className='text-yellow-400 pr-1' />
         <AiFillStar className='text-yellow-400 pr-1' />
@@ -56,15 +56,15 @@ export default function UserInfo() {
     </div>
   </div>
    }
-  if (!localStorage.getItem(USER_LOGIN)) {
-    return <Redirect to='/login' />
-  }
+ 
   const rednerSkill = () =>{
    return userLocal.skill.map((skil, indx) =>{
     return <p className='add-skill py-1' key={indx}>{skil}</p>
     })
   }
- 
+  if (!localStorage.getItem(USER_LOGIN)) {
+    return <Redirect to='/login' />
+  }
   return (
     <div className='user container pt-8 flex justify-between'>
       <div className="user__left">

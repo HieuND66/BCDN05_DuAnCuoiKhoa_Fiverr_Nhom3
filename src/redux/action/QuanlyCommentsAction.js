@@ -29,7 +29,7 @@ export const layCommentsAction = (id) => {
   return async (dispatch) => {
     try {
       let result = await quanLyCommentsService.layCommnets(id);
-      console.log('result', result.data);
+      // console.log('result', result.data);
       if (result.status === 200) {
         dispatch({
           type: SET_COMMENTS,

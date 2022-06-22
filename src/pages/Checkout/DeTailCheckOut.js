@@ -46,7 +46,7 @@ export default function DeTailCheckOut(props) {
   const handleCancel = () => {
     setIsModalVisible(false);
   };
-
+  
   return (
     <div className="container my-16">
 
