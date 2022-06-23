@@ -99,3 +99,12 @@
       background-color: #1dbf73;
   }
 }
+
+// Responsive
+@media screen and (max-width:640px) {
+  .joblist{
+      .card{
+        width: 100%;
+      }
+  }
+}

@@ -71,7 +71,7 @@ export default function Header() {
   const rederJobType = () => {
     return loaiCongViec.map((loai, index) => {
       return <li className='menu-tiem px-1 ' key={index}>
-        <NavLink to='/joblist' className='text-gray-500 hover:text-gray-500 font-semibold'>{loai.name}</NavLink>
+        <NavLink to='/joblist' className='text-gray-500 hover:text-gray-500 font-semibold uppercase'>{loai.name}</NavLink>
       </li>
     })
   }

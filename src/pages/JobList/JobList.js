@@ -119,12 +119,12 @@ export default function JobList() {
     setPageNumber(selected) 
   }
   return (
-    <div className="container">
-      <div className='grid grid-cols-4 gap-12 pt-8'>
+    <div className="container joblist">
+      {/* <div className='grid grid-cols-4 gap-12 pt-8'> */}
+      <div className='grid sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4 gap-9 pt-4 '>
         
         {displayJob()}
         {/* {renderListJob()} */}
-      </div>
       <div className="pagination w-3/4 float-right my-12">
 
         <ReactPaginate
@@ -138,6 +138,7 @@ export default function JobList() {
           disabledClassName={"paginationDisabled"}
           activeClassName={"paginationActive"}
         />
+      </div>
       </div>
       
     </div>

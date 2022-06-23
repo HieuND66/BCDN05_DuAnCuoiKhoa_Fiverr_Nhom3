@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
 import './detail.scss'
-import { AiFillStar} from "react-icons/ai";
+import { AiFillStar } from "react-icons/ai";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import { useDispatch, useSelector } from 'react-redux';
 import { layThongTinChiTietCongViecAction } from '../../redux/action/QuanLyJobAction';
 import Checkout from '../Checkout/Checkout';
 import Comments from '../Comments/Comments';
+import { history } from '../../App';
 
 
 export default function Detail(props) {
@@ -14,7 +15,7 @@ export default function Detail(props) {
   const jobDetail = useSelector(state => state.QuanLyJobReducer.jobDetail)
 
   let sliceImg = ''
-  if(jobDetail.subType){
+  if (jobDetail.subType) {
     sliceImg = jobDetail.subType.image
   } else {
     sliceImg = jobDetail.image
@@ -27,41 +28,41 @@ export default function Detail(props) {
       caption: 'First Slide'
     },
   ];
-  
+
   let { id } = props.match.params;
   useEffect(() => {
     dispatch(layThongTinChiTietCongViecAction(id))
   }, [])
 
   let imgBackUp = 'https://fiverr.cybersoft.edu.vn/public/images/job/1636645826542_design-professional-wix-website-b6ab.jpg'
-  const imageCard = (job) =>{
-    if(job.subType){
-      if(job.image && job.subType.image){
+  const imageCard = (job) => {
+    if (job.subType) {
+      if (job.image && job.subType.image) {
         return <img src={job.subType.image} alt="" />
-      }else{
+      } else {
         return <img src={imgBackUp} alt="" />
       }
-    } else if(job.image){
+    } else if (job.image) {
       return <img src={job.image} alt="" />
-    } else{
+    } else {
       return <img src={imgBackUp} alt="" />
     }
-    
+
   }
 
 
   return (
     <div className='detail-page container pt-8'>
 
-      <div className=" grid grid-cols-3 gap-4 flex justify-between">
-        <div className="detail-content col-span-2 ">
+      <div className="detail-page-wrap flex justify-around">
+        <div className="detail-content">
           <div className="detail-content__info">
 
             <div className="detail-content__header my-8 ">
-              <h3 className="title-header">{jobDetail.name}</h3>
+              <h3 className="title-header uppercase">{jobDetail.name}</h3>
               <div className="info-header">
-              {jobDetail ? <img src={jobDetail.image} alt="" className='img-author mr-4' />: <img src={jobDetail.image} alt="" className='img-author mr-4' />}
-                
+                {jobDetail ? <img src={jobDetail.image} alt="" className='img-author mr-4' /> : <img src={jobDetail.image} alt="" className='img-author mr-4' />}
+
                 {/* <img src={jobDetail.image} alt="" className='img-author mr-4' /> */}
                 {jobDetail.subType != null ? <p className="name-author ">{jobDetail.subType.name}</p> : <p className="name-author ">parthbhuta</p>}
                 {/* <p className="name-author ">{jobDetail.subType.name}</p> */}
@@ -83,7 +84,7 @@ export default function Detail(props) {
             <div className="slide-container">
               <Carousel>
                 <div>
-                {imageCard(jobDetail)}
+                  {imageCard(jobDetail)}
                 </div>
               </Carousel>
             </div>
@@ -124,11 +125,11 @@ export default function Detail(props) {
           <div className="detail-content__seller">
             <h2 className='detail-content-seller-title'>About The Seller</h2>
             <div className="detail-content-seller-info py-8">
-            {/* {jobDetail.image ? <img src={jobDetail.image.replace('s', '')} alt="" className='img-author' /> : <img src={jobDetail.image} alt="" className='img-author' />} */}
+              {/* {jobDetail.image ? <img src={jobDetail.image.replace('s', '')} alt="" className='img-author' /> : <img src={jobDetail.image} alt="" className='img-author' />} */}
               {/* <img src={jobDetail.image.replace('s', '')} alt="" className='img-author' /> */}
               <img src={jobDetail.image} alt="" className='img-author' />
               <div className="detail-content-seller-infor-seller">
-              {jobDetail.subType ? <h3>{jobDetail.subType.name}</h3> : <h3 className="name-author ">parthbhuta</h3>}
+                {jobDetail.subType ? <h3>{jobDetail.subType.name}</h3> : <h3 className="name-author ">parthbhuta</h3>}
                 {/* <h3>{jobDetail.subType.name}</h3> */}
                 {/* <h3>{jobDetail.name}</h3> */}
                 <p>SharePoint Developer, UI UX Designer</p>
@@ -141,7 +142,7 @@ export default function Detail(props) {
                   <p className='point text-yellow-500 px-1'>{jobDetail.rating}</p>
                   <p className='bought'>(150)</p>
                 </div>
-                <button className='btn-contact'>Contact me</button>
+                <button className='btn-contact' >Contact me</button>
               </div>
             </div>
           </div>
@@ -288,10 +289,10 @@ export default function Detail(props) {
             <h3 className='text-xl font-semibold'>Filter</h3>
             <p>Industry All Industry</p>
           </div>
-          <Comments id = {id}/>
+          <Comments id={id} />
         </div>
-    
-        <Checkout id = {id} jobDetail = {jobDetail}/>
+
+        <Checkout id={id} jobDetail={jobDetail} />
       </div>
     </div>
   )
