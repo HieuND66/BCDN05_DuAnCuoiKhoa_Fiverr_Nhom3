@@ -4,8 +4,9 @@ import { NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
-export default function SearchName() {
-
+export default function SearchName(props) {
+  let { id } = props.match.params;
+  console.log(id);
   const { DSCVtheoTen } = useSelector(state => state.QuanLyJobReducer)
   let imgBackUp = 'https://fiverr.cybersoft.edu.vn/public/images/job/1636645826542_design-professional-wix-website-b6ab.jpg'
   const imageCard = (job) =>{
@@ -70,12 +71,12 @@ export default function SearchName() {
      setPageNumber(selected) 
    }
   return (
-    <div className="container">
-    <div className='grid grid-cols-4 gap-12 pt-8'>
+    <div className="container joblist">
+      <h2 className='text-xl text-gray-500 font-bold py-6'>Result :"{id}"</h2>
+    <div className='grid sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4 gap-9 pt-4 '>
       
       {displayJob()}
       {/* {renderListJob()} */}
-    </div>
     <div className="pagination w-3/4 float-right my-12">
 
       <ReactPaginate
@@ -89,6 +90,7 @@ export default function SearchName() {
         disabledClassName={"paginationDisabled"}
         activeClassName={"paginationActive"}
       />
+    </div>
     </div>
     
   </div>

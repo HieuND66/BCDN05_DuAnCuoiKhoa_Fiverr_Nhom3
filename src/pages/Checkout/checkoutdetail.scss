@@ -6,7 +6,7 @@ $black-color: #351897;
 .container-checkout {
   background-color: #fff;
   position: relative;
-  display: grid;
+  display: flex;
   grid-template-columns: 320px 858px;
   border-radius: $border-radius;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
@@ -15,6 +15,7 @@ $black-color: #351897;
    width: 300px;
    height: 300px;
    border-radius: $border-radius 0 0 $border-radius;
+   object-fit: cover;
   }
   .btn {
    position: absolute;
@@ -105,3 +106,30 @@ $black-color: #351897;
   width: 400px;
   height: 400px;
 }
+
+
+@media only screen and (max-width: 992px) {
+
+  .container-checkout {
+    flex-direction: column;
+   
+      img{
+        width: 100%;
+        object-fit: cover;
+    }
+    .btn {
+
+      right: 50%;
+      transform: translateX(50%);
+      padding: 0 5px;
+      margin-top: 10px;
+    }
+  }
+  .ant-modal-root .ant-modal-content{  
+    width: 200px;
+    height: 200px;
+    .ant-modal-root .ant-modal-body {
+      align-items: normal;
+    }
+  }
+ }

@@ -250,11 +250,15 @@ body {
 }
 .CategoriesMenu{
   border-bottom: 1px solid #e4e5e7;
+  ul{
+    margin-bottom: 0;
+  }
 }
 .categories{
   display: flex;
   align-items: center;
   justify-content: space-between;
+ 
 
 }
 .categories .menu-tiem{
@@ -262,6 +266,7 @@ body {
   transition: all 0.3s ease;
   line-height: 36px;
   cursor: pointer;
+
 }
 .categories .menu-tiem:hover{
   border-bottom: $border-bottom-active;
