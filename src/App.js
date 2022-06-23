@@ -1,7 +1,7 @@
 
 import './App.css';
 import { createBrowserHistory } from 'history'
-import { Router, Switch } from 'react-router-dom';
+import { Route, Router, Switch } from 'react-router-dom';
 import  HomeTemplate  from './templates/HomeTemplate/HomeTemplate';
 import Home from './pages/Home/Home';
 import Detail from './pages/Detail/Detail';
@@ -13,6 +13,7 @@ import JobList from './pages/JobList/JobList';
 import Loading from './components/Loading/Loading';
 import Register from './pages/Register/Register';
 import SearchName from './pages/SearchName/SearchName';
+import SignUp from './pages/SignUp/SignUp';
 
 const HomeTemplateLazy = lazy(() => import ('./templates/HomeTemplate/HomeTemplate'))
 export const history = createBrowserHistory()
@@ -31,7 +32,9 @@ function App() {
     <HomeTemplateLazy  path="/joblist" exact Component={JobList}/>
     <HomeTemplateLazy  path="/job/:id" exact Component={Detail}/>
     <HomeTemplate path="/user/:id" exact Component={UserInfo} />
-    <HomeTemplate path='/login' exact Component={Login} />
+    {/* <HomeTemplate path='/login' exact Component={Login} /> */}
+    <Route path='/login' exact component={Login} />
+    <Route path='/signup' exact component={SignUp} />
     <HomeTemplate path='/register' exact Component={Register} />
     <HomeTemplate path='/detaicheckout/:id' exact Component={DeTailCheckOut} />
     </Suspense>

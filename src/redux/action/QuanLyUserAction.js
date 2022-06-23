@@ -1,10 +1,8 @@
 
 import { quanLyUserService } from '../../services/QuanLyUserService';
 import { DANG_NHAP } from '../types/QuanLyUserType';
-
 import {history} from '../../App'
-
-
+import { message } from 'antd';
 
 
 export const DangNhapAction = (thongTinDangNhap) => {
@@ -30,5 +28,17 @@ export const DangNhapAction = (thongTinDangNhap) => {
   }
 }
 
-
-
+export const signUp = (infoRegister) => {
+  return async (dispatch) => {
+      try {
+          const result = await quanLyUserService.signUp(infoRegister)
+          if (result.status === 201) {
+              message.success('Bạn đã đăng kí thành công')
+              history.push('/login')//chuyển hướng về trang đăng nhập
+          }
+      }
+      catch (error) {
+          message.error(`Vui lòng điền lại thông tin`);
+      }
+  }
+}

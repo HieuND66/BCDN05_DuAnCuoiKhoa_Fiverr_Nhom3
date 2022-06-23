@@ -2,6 +2,7 @@
 import { Route } from 'react-router-dom';
 import { Fragment, useEffect } from "react";
 import Header from '../header/Header';
+import Footer from '../footer/Footer';
 
 
  const HomeTemplate = (props) => {
@@ -13,9 +14,7 @@ import Header from '../header/Header';
     return <Fragment>
       <Header {...propsRoute} />
       <Component {...propsRoute} />
-      <div className="footer">
-      footer
-      </div>
+      <Footer/>
     </Fragment>
   }} />
 }
