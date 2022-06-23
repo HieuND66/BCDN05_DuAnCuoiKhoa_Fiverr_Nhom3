@@ -1,7 +1,6 @@
 import React from 'react'
 import '../../pages/Home/Home.scss'
 export default function Footer() {
-     
   return (
     <footer>
                     <div className="container mt-20" >
