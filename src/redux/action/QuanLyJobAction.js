@@ -70,7 +70,7 @@ export const layDSCVtheoTenAction = (name) => {
     try {
       console.log(name);
       let result = await quanLyJobService.layDSCVtheoTen(name);
-      // console.log('result', result.data);
+      console.log('result', result);
       if (result.status === 200) {
         dispatch({
           type: DSCV_THEO_TEN,

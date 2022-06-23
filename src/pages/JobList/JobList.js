@@ -7,7 +7,7 @@ import { layDanhSachCongViecAction } from '../../redux/action/QuanLyJobAction';
 import { layDanhSachLoaiCongViecAction } from '../../redux/action/QuanLyLoaiJobAction';
 import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
-import { Pagination } from 'antd';
+
 
 export default function JobList() {
 
