@@ -11,6 +11,7 @@ import Login from './pages/Login/Login';
 import DeTailCheckOut from './pages/Checkout/DeTailCheckOut';
 import JobList from './pages/JobList/JobList';
 import Loading from './components/Loading/Loading';
+import Register from './pages/Register/Register';
 
 const HomeTemplateLazy = lazy(() => import ('./templates/HomeTemplate/HomeTemplate'))
 export const history = createBrowserHistory()
@@ -29,6 +30,7 @@ function App() {
     <HomeTemplateLazy  path="/job/:id" exact Component={Detail}/>
     <HomeTemplate path="/user/:id" exact Component={UserInfo} />
     <HomeTemplate path='/login' exact Component={Login} />
+    <HomeTemplate path='/register' exact Component={Register} />
     <HomeTemplate path='/detaicheckout/:id' exact Component={DeTailCheckOut} />
     </Suspense>
 
