@@ -57,7 +57,7 @@ export default function Detail(props) {
         <div className="detail-content col-span-2 ">
           <div className="detail-content__info">
 
-            <div className="detail-content__header my-8">
+            <div className="detail-content__header my-8 ">
               <h3 className="title-header">{jobDetail.name}</h3>
               <div className="info-header">
               {jobDetail ? <img src={jobDetail.image} alt="" className='img-author mr-4' />: <img src={jobDetail.image} alt="" className='img-author mr-4' />}

@@ -66,7 +66,7 @@ export default function UserInfo() {
     return <Redirect to='/login' />
   }
   return (
-    <div className='user container pt-8 flex justify-between'>
+    <div className='user container pt-8 flex justify-around'>
       <div className="user__left">
         <div className="user__left-info">
           <div className="user__left-info-top">

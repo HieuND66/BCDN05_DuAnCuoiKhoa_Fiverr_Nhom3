@@ -73,7 +73,8 @@ export default function JobList() {
   }
 
 
-  const [jobs, setJob] = useState(danhSachCongViec.slice(0,120));
+  // const [jobs, setJob] = useState(danhSachCongViec.slice(0,120));
+  const jobs = danhSachCongViec
   const [pageNumber, setPageNumber] = useState(0);
   const jobPerPage = 12
   const pageVisited = pageNumber * jobPerPage
@@ -126,7 +127,7 @@ export default function JobList() {
       </div>
       <div className="pagination w-3/4 float-right my-12">
 
-        {/* <ReactPaginate
+        <ReactPaginate
           previousLabel={"Previous"}
           nextLabel={'Next'}
           pageCount= {pageCount}
@@ -136,7 +137,7 @@ export default function JobList() {
           nextClassName={"nextBttn"}
           disabledClassName={"paginationDisabled"}
           activeClassName={"paginationActive"}
-        /> */}
+        />
       </div>
       
     </div>
