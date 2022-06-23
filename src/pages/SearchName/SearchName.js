@@ -72,12 +72,15 @@ export default function SearchName(props) {
    }
   return (
     <div className="container joblist">
+      <div className="joblist-wrap">
+
       <h2 className='text-xl text-gray-500 font-bold py-6'>Result :"{id}"</h2>
-    <div className='grid sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4 gap-9 pt-4 '>
+    <div className='grid sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4 gap-9 pt-4 pb-11'>
       
       {displayJob()}
       {/* {renderListJob()} */}
-    <div className="pagination w-3/4 float-right my-12">
+      </div>
+    <div className="pagination w-3/4 float-right ">
 
       <ReactPaginate
         previousLabel={"Previous"}

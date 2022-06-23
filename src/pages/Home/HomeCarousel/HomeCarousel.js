@@ -25,8 +25,13 @@ export default function HomeCarousel(props) {
     },
     onSubmit: values => {
       dispatch(layDSCVtheoTenAction(values.name))
-      history.push(`/search/${values.name}`)
-    },
+      if(values.name == ""){
+
+        history.push(`/joblist`)
+      } else {
+        history.push(`/search/${values.name}`)
+      }
+    } ,
 
   })
   return (
@@ -39,7 +44,7 @@ export default function HomeCarousel(props) {
                 <h1>Find the perfect freelance services for your business</h1>
                 <form onSubmit={formik.handleSubmit}>
                   <FontAwesomeIcon icon={faSearch} />
-                  <input name='name' type="text" placeholder='Try building mobile app' value={formik.values.hoTen} onChange={formik.handleChange} />
+                  <input name='name' type="text" placeholder='Try building mobile app'  onChange={formik.handleChange} />
                   <button type='submit'>Search</button>
                 </form>
                 <div className='carousel-popular'>
