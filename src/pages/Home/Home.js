@@ -1,14 +1,27 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import HomeCarousel from './HomeCarousel/HomeCarousel'
 import { useDispatch } from 'react-redux';
-import { Button } from 'antd';
+import { Button, Modal } from 'antd';
 import ReactSlick from '../../components/RSlick/ReactSlick';
 import './Home.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheckCircle,faFaceBook } from '@fortawesome/free-solid-svg-icons'
+import { faCheckCircle, faFaceBook } from '@fortawesome/free-solid-svg-icons'
 import { layThongTinChiTietCongViecAction } from '../../redux/action/QuanLyJobAction';
+import ReactPlayer from 'react-player';
 
 export default function Home(props) {
+     const [isModalVisible, setIsModalVisible] = useState(false);
+     const showModal = () => {
+          setIsModalVisible(true);
+     };
+
+     const handleOk = () => {
+          setIsModalVisible(false);
+     };
+
+     const handleCancel = () => {
+          setIsModalVisible(false);
+     };
      const dispatch = useDispatch();
      // useEffect(() => {
      //      let {id} = props.match.params;
@@ -17,6 +30,7 @@ export default function Home(props) {
      //      // let id  = '618d3a5895d99f001c0c0ce8'
      //      // dispatch(layThongTinCongViec(id))
      //    }, [])
+
      return (
           <div>
                <HomeCarousel />
@@ -60,9 +74,13 @@ export default function Home(props) {
                               <div className='w-full lg:w-5/12'>
                                    <div className="video-modal">
                                         <div className="picture-wrapper">
-                                             <picture className='cursor-pointer'>
+                                             <picture className='cursor-pointer' onClick={showModal}>
                                                   <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_700,dpr_1.0/v1/attachments/generic_asset/asset/089e3bb9352f90802ad07ad9f6a4a450-1599517407052/selling-proposition-still-1400-x1.png" alt="" />
                                              </picture>
+                                             {/* <Modal className='w-full h-full' title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+                                                  <ReactPlayer className='trailerVideo' url={`https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/vmvv3czyk2ifedefkau7`} width="100%" height={'60%'} playing={true} />
+                                        
+                                             </Modal> */}
                                         </div>
                                    </div>
                               </div>
@@ -152,7 +170,7 @@ export default function Home(props) {
                          </div>
                     </div>
                </div>
-               
+
           </div>
      )
 }
