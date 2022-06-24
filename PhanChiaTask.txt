@@ -1,4 +1,4 @@
-1/Hiếu(lead):
+1/Hiếu(lead - tạo dự án):
 +Trang danh sách công việc
 +Trang chi tiết công việc
 +Trang chi tiết thông tin cá nhân
