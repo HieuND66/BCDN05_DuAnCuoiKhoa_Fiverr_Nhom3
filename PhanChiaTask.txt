@@ -1,0 +1,13 @@
+1/Hiếu(lead):
++Trang danh sách công việc
++Trang chi tiết công việc
++Trang chi tiết thông tin cá nhân
++Trang đăng nhập
++Header
+2/Huy
++Trang chủ
++Trang danh sách công việc và loại công việc
++Trang đăng kí
++Footer
+3/Quang (bỏ)
++Admin
