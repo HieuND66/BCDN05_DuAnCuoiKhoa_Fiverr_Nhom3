@@ -1,10 +1,12 @@
-import { DSCV_THEO_TEN, SET_CHI_TIET_CONG_VIEC } from "../types/QuanLyJobType"
+import { DSCV_THEO_TEN, LAY_DSCV_THEO_CV_CHINH, LAY_TT_LOAI_CV_CHINH, SET_CHI_TIET_CONG_VIEC } from "../types/QuanLyJobType"
 
 const stateDefault = {
   jobDetail: {
     subType : {}
   },
-  DSCVtheoTen:[]
+  DSCVtheoTen:[],
+  DSLoaiCVChinh:[],
+  DSTheoLoaiCVChinh:[]
 }
 
  export const QuanLyJobReducer = (state = stateDefault, action) =>{
@@ -18,9 +20,17 @@ const stateDefault = {
       console.log(state.DSCVtheoTen);
       return {...state}
     }
+    case LAY_TT_LOAI_CV_CHINH : {
+      state.DSLoaiCVChinh = action.dsCVChinh
+      console.log(state.DSLoaiCVChinh);
+      return {...state}
+    }
+    case LAY_DSCV_THEO_CV_CHINH : {
+      state.DSTheoLoaiCVChinh = action.dsCV;
+      console.log(state.DSTheoLoaiCVChinh);
+      return {...state}
+    }
        
-       
-   
      default:
         return {...state}
    }

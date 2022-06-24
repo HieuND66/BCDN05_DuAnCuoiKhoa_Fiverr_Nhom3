@@ -24,6 +24,13 @@ export class QuanLyJobService {
   layDSCVtheoTen = (name) => {
     return http.get(`/api/jobs/by-name?name=${name}`)
 }
+  layTTLoaiCVChinh = () => {
+    return http.get(`/api/type-jobs/6198768aaef344001cecfd43`)
+}
+  layDSCVTheoCVChinh = (type) => {
+    return http.get(`/api/jobs/by-type?type=${type}&skip=0&llimit=15`)
+}
+
 }
 
 export const quanLyJobService = new QuanLyJobService()
