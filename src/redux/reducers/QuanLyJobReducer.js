@@ -6,7 +6,8 @@ const stateDefault = {
   },
   DSCVtheoTen:[],
   DSLoaiCVChinh:[],
-  DSTheoLoaiCVChinh:[]
+  DSTheoLoaiCVChinh:[],
+  tenCVChinh:'',
 }
 
  export const QuanLyJobReducer = (state = stateDefault, action) =>{
@@ -17,17 +18,15 @@ const stateDefault = {
     }
     case DSCV_THEO_TEN : {
       state.DSCVtheoTen = action.DSCV
-      console.log(state.DSCVtheoTen);
       return {...state}
     }
     case LAY_TT_LOAI_CV_CHINH : {
       state.DSLoaiCVChinh = action.dsCVChinh
-      console.log(state.DSLoaiCVChinh);
+      state.tenCVChinh = action.tenCVChinh
       return {...state}
     }
     case LAY_DSCV_THEO_CV_CHINH : {
       state.DSTheoLoaiCVChinh = action.dsCV;
-      console.log(state.DSTheoLoaiCVChinh);
       return {...state}
     }
        

@@ -33,11 +33,7 @@ function App() {
     <HomeTemplateLazy  path="/joblist" exact Component={JobList}/>
     <HomeTemplateLazy  path="/job/:id" exact Component={Detail}/>
     <HomeTemplate path="/user/:id" exact Component={UserInfo} />
-    <HomeTemplate path="/jobtype" exact Component={JobType} />
-    {/* <HomeTemplate path="/jobtype" exact Component={JobType} /> */}
-    {/* <JobType path="/jobtype" exact component={SignUp} /> */}
-
-    {/* <HomeTemplate path='/login' exact Component={Login} /> */}
+    <HomeTemplate path="/jobtype/:id" exact Component={JobType} />
     <Route path='/login' exact component={Login} />
     <Route path='/signup' exact component={SignUp} />
     <HomeTemplate path='/register' exact Component={Register} />

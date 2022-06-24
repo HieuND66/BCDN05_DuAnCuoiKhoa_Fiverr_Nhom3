@@ -1,38 +1,14 @@
 
 import axios, { Axios } from 'axios';
 import { quanLyDanhSachJobService } from '../../services/QuanLyDanhSachJobService';
-
-
 import { quanLyJobService } from "../../services/QuanLyJobService";
 import { SET_DANH_SACH_CONG_VIEC } from '../types/QuanLyDanhSachJob';
 import { DSCV_THEO_TEN, LAY_DSCV_THEO_CV_CHINH, LAY_TT_LOAI_CV_CHINH, SET_CHI_TIET_CONG_VIEC } from '../types/QuanLyJobType';
-
-// export const layThongTinChiTietCongViecAction = (id) => {
-
-//   return async dispatch => {
-//     try {
-//       let result = await quanLyJobService.layThongTinCongViec(id);
-
-//       console.log(result);
-//       // dispatch({
-//       //   type: SET_DANH_SACH_PHIM,
-//       //   arrfilm: result.data.content
-//       // })
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   }
-
-// }
-
-
-
 
 export const layThongTinChiTietCongViecAction = (id) => {
   return async (dispatch) => {
     try {
       let result = await quanLyJobService.layThongTinCongViec(id);
-      // console.log('result', result.data);
       if (result.status === 200) {
         dispatch({
           type: SET_CHI_TIET_CONG_VIEC,
@@ -51,7 +27,6 @@ export const layDanhSachCongViecAction = (id) => {
     
     try {
       let result = await quanLyDanhSachJobService.layDanhSachCongViec();
-      // console.log('result', result.data);
       if (result.status === 200) {
         dispatch({
           type: SET_DANH_SACH_CONG_VIEC,
@@ -87,15 +62,13 @@ export const layDSCVtheoTenAction = (name) => {
 
 export const layTTLoaiCVChinhAction = (id) => {
   return async (dispatch) => {
-    
     try {
-      let result = await quanLyJobService.layTTLoaiCVChinh();
-      // console.log('result', result.data);
+      let result = await quanLyJobService.layTTLoaiCVChinh(id);
       if (result.status === 200) {
-        console.log(result.data);
         dispatch({
           type: LAY_TT_LOAI_CV_CHINH,
-          dsCVChinh: result.data.subTypeJobs
+          dsCVChinh: result.data.subTypeJobs,
+          tenCVChinh: result.data.name,
         })
       }
 
@@ -106,10 +79,8 @@ export const layTTLoaiCVChinhAction = (id) => {
 }
 export const layDSCVTheoCVChinhAction = (type) => {
   return async (dispatch) => {
-    
     try {
       let result = await quanLyJobService.layDSCVTheoCVChinh(type);
-      // console.log('result', result.data);
       if (result.status === 200) {
         console.log(result.data);
         dispatch({
@@ -117,7 +88,6 @@ export const layDSCVTheoCVChinhAction = (type) => {
           dsCV: result.data
         })
       }
-
     } catch (error) {
       console.log(error);
     }
